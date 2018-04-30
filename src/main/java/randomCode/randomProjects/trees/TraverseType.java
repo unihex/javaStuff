@@ -1,4 +1,4 @@
-package randomCode.randomProjects.searching;
+package randomCode.randomProjects.trees;
 
 public enum TraverseType {
 	BFS(),
