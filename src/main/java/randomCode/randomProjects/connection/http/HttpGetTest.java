@@ -26,10 +26,14 @@ public class HttpGetTest {
 		expectedGetPost.setId(3L);
 		expectedGetPost.setUserId(1L);
 		expectedGetPost.setTitle("ea molestias quasi exercitationem repellat qui ipsa sit aut");
-		expectedGetPost.setBody("et iusto sed quo iure"
-				+ "\nvoluptatem occaecati omnis eligendi aut ad"
-				+ "\nvoluptatem doloribus vel accusantium quis pariatur"
-				+ "\nmolestiae porro eius odio et labore et velit aut");
+		
+		StringBuilder bodyText = new StringBuilder();
+		bodyText.append("et iusto sed quo iure\n");
+		bodyText.append("voluptatem occaecati omnis eligendi aut ad\n");
+		bodyText.append("voluptatem doloribus vel accusantium quis pariatur\n");
+		bodyText.append("molestiae porro eius odio et labore et velit aut");
+		
+		expectedGetPost.setBody(bodyText.toString());
 		
 		Post actualGetPost = getPostByID(3, "Jackson");
 		
@@ -55,10 +59,14 @@ public class HttpGetTest {
 		expectedLastPostInList.setId(100L);
 		expectedLastPostInList.setUserId(10L);
 		expectedLastPostInList.setTitle("at nam consequatur ea labore ea harum");
-		expectedLastPostInList.setBody("cupiditate quo est a modi nesciunt soluta"
-				+ "\nipsa voluptas error itaque dicta in"
-				+ "\nautem qui minus magnam et distinctio eum"
-				+ "\naccusamus ratione error aut");
+		
+		bodyText = new StringBuilder();
+		bodyText.append("cupiditate quo est a modi nesciunt soluta\n");
+		bodyText.append("ipsa voluptas error itaque dicta in\n");
+		bodyText.append("autem qui minus magnam et distinctio eum\n");
+		bodyText.append("accusamus ratione error aut");
+				
+		expectedLastPostInList.setBody(bodyText.toString());
 		
 		List<Post> postList = getAllPosts("Jackson");	
 		int listSize = postList.size();
